@@ -1,0 +1,195 @@
+body {
+  background-color: #EAE7DC;
+  font-family: 'Homenaje', sans-serif; }
+
+.dark-pink {
+  color: #E85A4F; }
+
+.light-pink {
+  color: #E98074; }
+
+.smokey-grey {
+  color: #EAE7DC; }
+
+.beige {
+  color: #D8C3A5; }
+
+.dark-grey {
+  color: #8E8D8A; }
+
+.title-wrapper {
+  min-height: 100vh;
+  position: relative;
+  place-items: center;
+  perspective: 250px;
+  perspective-origin: 50% calc(50% - 150px);
+  transform-style: preserve-3d;
+  transition: perspective-origin 0.2s linear;
+  opacity: 1; }
+
+.banner {
+  height: 150px;
+  display: flex;
+  transform-style: preserve-3d; }
+
+.horizontal-spin-slow {
+  animation: rotate 17s infinite linear; }
+
+.horizontal-spin-fast {
+  animation: rotate 7s infinite cubic-bezier(0.1, 0.1, 0.3, 0.1); }
+
+@keyframes rotate {
+  to {
+    transform: rotateY(-360deg); } }
+
+.panel {
+  position: absolute;
+  transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(157px);
+  width: 40px;
+  height: 120px;
+  overflow: hidden; }
+
+.panel::before {
+  position: absolute;
+  left: var(--left);
+  content: 'SolveSimply SolveSimply SolveSimply SolveSimply';
+  font-size: 63px;
+  width: max-content;
+  color: #E85A4F; }
+
+.panel:nth-child(1) {
+  --left: 0px;
+  --angle: 0deg; }
+
+.panel:nth-child(2) {
+  --left: -40px;
+  --angle: 14.4deg; }
+
+.panel:nth-child(3) {
+  --left: -80px;
+  --angle: 28.8deg; }
+
+.panel:nth-child(4) {
+  --left: -120px;
+  --angle: 43.2deg; }
+
+.panel:nth-child(5) {
+  --left: -160px;
+  --angle: 57.6deg; }
+
+.panel:nth-child(6) {
+  --left: -200px;
+  --angle: 72deg; }
+
+.panel:nth-child(7) {
+  --left: -240px;
+  --angle: 86.4deg; }
+
+.panel:nth-child(8) {
+  --left: -280px;
+  --angle: 100.8deg; }
+
+.panel:nth-child(9) {
+  --left: -320px;
+  --angle: 115.2deg; }
+
+.panel:nth-child(10) {
+  --left: -360px;
+  --angle: 129.6deg; }
+
+.panel:nth-child(11) {
+  --left: -400px;
+  --angle: 144deg; }
+
+.panel:nth-child(12) {
+  --left: -440px;
+  --angle: 158.4deg; }
+
+.panel:nth-child(13) {
+  --left: -480px;
+  --angle: 172.8deg; }
+
+.panel:nth-child(14) {
+  --left: -520px;
+  --angle: 187.2deg; }
+
+.panel:nth-child(15) {
+  --left: -560px;
+  --angle: 201.6deg; }
+
+.panel:nth-child(16) {
+  --left: -600px;
+  --angle: 216deg; }
+
+.panel:nth-child(17) {
+  --left: -640px;
+  --angle: 230.4deg; }
+
+.panel:nth-child(18) {
+  --left: -680px;
+  --angle: 244.8deg; }
+
+.panel:nth-child(19) {
+  --left: -720px;
+  --angle: 259.2deg; }
+
+.panel:nth-child(20) {
+  --left: -760px;
+  --angle: 273.6deg; }
+
+.panel:nth-child(21) {
+  --left: -800px;
+  --angle: 288deg; }
+
+.panel:nth-child(22) {
+  --left: -840px;
+  --angle: 302.4deg; }
+
+.panel:nth-child(23) {
+  --left: -880px;
+  --angle: 316.8deg; }
+
+.panel:nth-child(24) {
+  --left: -920px;
+  --angle: 331.2deg; }
+
+.panel:nth-child(25) {
+  --left: -960px;
+  --angle: 345.6deg; }
+
+.screen {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background-image: linear-gradient(90deg, #eae7dc75, #EAE7DC, #EAE7DC, #eae7dc75);
+  transform: translate(0%, -25%);
+  border-radius: 50%; }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(15vh);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in; }
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0); }
+
+@media (max-width: 576px) {
+  .title-wrapper {
+    transform: scale(0.7); }
+  body {
+    overflow-x: hidden !important; } }
+
+.fs-05 {
+  font-size: calc(3rem + 1.5vw) !important; }
+
+@media (min-width: 1200px) {
+  .fs-05 {
+    font-size: 3.5 !important; } }
+
+.fs-025 {
+  font-size: calc(6rem + 1.5vw) !important; }
+
+@media (min-width: 1200px) {
+  .fs-025 {
+    font-size: 6rem !important; } }

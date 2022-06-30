@@ -1,0 +1,130 @@
+body{
+    background-color: #EAE7DC;
+    font-family: 'Homenaje', sans-serif;
+}
+
+// colours 
+
+.dark-pink {
+    color: #E85A4F;
+}
+
+.light-pink {
+    color: #E98074;
+}
+
+.smokey-grey {
+    color: #EAE7DC;
+}
+
+.beige {
+    color: #D8C3A5;
+}
+
+.dark-grey {
+    color: #8E8D8A;
+}
+
+.title-wrapper{
+    min-height: 100vh;
+    position: relative;
+    place-items: center;
+    perspective: 250px;
+    perspective-origin: 50% calc(50% - 150px);
+    transform-style: preserve-3d;
+    transition: perspective-origin 0.2s linear;
+    opacity: 1;
+}
+
+.banner {
+    height: 150px;
+    display: flex;
+    transform-style: preserve-3d;
+}
+
+.horizontal-spin-slow {
+    animation: rotate 17s infinite linear;
+}
+
+.horizontal-spin-fast {
+    animation: rotate 7s infinite cubic-bezier(0.1, 0.1, 0.3, 0.1);
+}
+
+@keyframes rotate {
+    to { transform: rotateY(-360deg);}
+}
+
+$width: 40px;
+.panel {
+    position: absolute;
+    transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(157px);
+    width: $width;
+    height: 120px;
+    overflow: hidden;
+}
+
+.panel::before {
+    position: absolute;
+    left: var(--left);
+    content: 'SolveSimply SolveSimply SolveSimply SolveSimply';
+    font-size: 63px;
+    width: max-content;
+    color: #E85A4F;
+}
+
+@for $i from 0 to 25 {
+    .panel:nth-child(#{$i + 1}){
+        --left: #{$width * $i * -1};
+        --angle: #{360deg/25 * $i};
+    }
+}
+
+.screen {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background-image: linear-gradient(90deg, #eae7dc75, #EAE7DC, #EAE7DC, #eae7dc75);
+    transform: translate(0%,-25%);
+    border-radius: 50%;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(15vh);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+    .title-wrapper {
+        transform: scale(0.7);
+    }
+    body {
+        overflow-x: hidden !important;
+    }
+}
+
+.fs-05 {
+    font-size: calc(3rem + 1.5vw)!important;
+}
+
+@media (min-width: 1200px) {
+    .fs-05 {
+        font-size: 3.5!important;
+    }
+}
+
+.fs-025 {
+    font-size: calc(6rem + 1.5vw)!important;
+}
+
+@media (min-width: 1200px) {
+    .fs-025 {
+        font-size: 6rem!important;
+    }
+}
+
