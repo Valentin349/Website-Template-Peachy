@@ -1,6 +1,4 @@
 var viewportHeight = document.documentElement.clientHeight;
-var pageHeight = document.documentElement.scrollHeight;
-var progress;
 
 const faders = document.querySelectorAll('.fade-in');
 const progressBar = document.querySelector('.progress-bar');
@@ -25,6 +23,14 @@ const updateProgressBar = (progress) => {
     progressBar.style = "width: " + progress + "%";
 };
 
+const getScrollPercent = () => {
+    var h = document.documentElement, 
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
+    return Math.floor((h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100);
+}
+
 window.onscroll = () => {
     if (window.pageYOffset < viewportHeight/16){
         document.getElementById("title-banner").style.perspectiveOrigin = "50% calc(50% - 150px)";
@@ -36,28 +42,15 @@ window.onscroll = () => {
         document.getElementById("title-banner").style.perspectiveOrigin = "50% calc(50% - 30px)";
     }
     
-
-    if (window.pageYOffset > pageHeight*0.8){
-        updateProgressBar(100)
-    }
-    else if (window.pageYOffset > pageHeight*0.6){
-        updateProgressBar(80)
-    }
-    else if (window.pageYOffset > pageHeight*0.4){
-        updateProgressBar(60)
-    }
-    else if (window.pageYOffset > pageHeight*0.2){
-        updateProgressBar(40)
-    }
-    else if (window.pageYOffset > 0) {
-        updateProgressBar(20)
-    } else {
-        updateProgressBar(0)
-    }
-
+    updateProgressBar(getScrollPercent());
 };
+
+window.onresize = () => {
+    updateProgressBar(getScrollPercent());
+}
 
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
+    
 });
 
