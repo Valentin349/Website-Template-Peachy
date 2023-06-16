@@ -6,7 +6,7 @@ body{
 // colours 
 
 .dark-pink {
-    color: #E85A4F;
+    color: #e85a4f;
 }
 
 .light-pink {
@@ -125,3 +125,7 @@ $width: 40px;
     --bs-btn-active-color: #EAE7DC;
     --bs-btn-active-border-color: #92918d;
   }
+
+.calendly-inline-widget {
+    box-shadow: none;
+}

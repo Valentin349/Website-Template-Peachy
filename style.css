@@ -3,7 +3,7 @@ body {
   font-family: 'Homenaje', sans-serif; }
 
 .dark-pink {
-  color: #E85A4F; }
+  color: #e85a4f; }
 
 .light-pink {
   color: #E98074; }
@@ -195,3 +195,6 @@ body {
   --bs-btn-active-bg: #8E8D8A;
   --bs-btn-active-color: #EAE7DC;
   --bs-btn-active-border-color: #92918d; }
+
+.calendly-inline-widget {
+  box-shadow: none; }
